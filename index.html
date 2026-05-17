@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
-    <title>✨ For My Darling – Shapes Come to Life ✨</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>💖 draw magic for my everything baby 💖</title>
     <style>
         * {
             margin: 0;
@@ -14,10 +14,10 @@
         }
 
         body {
-            background: radial-gradient(circle at 30% 20%, #1a1025, #0a0512);
+            background: #0e0a1e;
             min-height: 100vh;
             overflow: hidden;
-            font-family: 'Segoe UI', 'Quicksand', 'Pacifico', cursive, 'Poppins', system-ui;
+            font-family: 'Segoe UI', 'Quicksand', 'Pacifico', 'Poppins', cursive, system-ui;
             touch-action: none;
         }
 
@@ -31,343 +31,169 @@
             cursor: crosshair;
         }
 
-        /* romantic UI panel */
-        .ui-panel {
+        /* romantic, fresh UI — minimal glass panel */
+        .love-dashboard {
             position: fixed;
-            top: 20px;
+            bottom: 20px;
             left: 0;
             right: 0;
             display: flex;
             justify-content: center;
-            gap: 16px;
+            gap: 18px;
             flex-wrap: wrap;
             z-index: 100;
             pointer-events: none;
             padding: 0 16px;
         }
 
-        .glass-card {
-            background: rgba(30, 15, 45, 0.65);
-            backdrop-filter: blur(16px);
-            border-radius: 100px;
-            padding: 8px 26px;
-            border: 1px solid rgba(255, 200, 220, 0.8);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 0 20px rgba(255, 80, 120, 0.4);
+        .glass-chip {
+            background: rgba(40, 25, 55, 0.7);
+            backdrop-filter: blur(20px);
+            border-radius: 80px;
+            padding: 8px 28px;
+            border: 1px solid rgba(255, 200, 230, 0.6);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 18px rgba(255, 100, 150, 0.5);
             pointer-events: auto;
-            text-align: center;
             font-weight: bold;
-            color: #fff0f5;
+            color: #fff0fb;
             font-family: 'Segoe UI', 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
         }
 
-        .love-title {
-            font-size: 1.2rem;
+        .greeting {
             background: rgba(0,0,0,0.5);
-            letter-spacing: 1px;
+            backdrop-filter: blur(16px);
+            font-size: 1rem;
         }
 
-        .love-title span {
-            color: #ffb7c5;
-            font-size: 1.3rem;
+        .greeting span {
+            color: #ffb7cd;
+            font-weight: bold;
         }
 
         button {
-            background: linear-gradient(135deg, #ff89ae, #ff4f7a);
+            background: linear-gradient(125deg, #ff8aae, #ff507c);
             border: none;
-            color: #fff0f0;
+            color: white;
             font-weight: bold;
             padding: 8px 26px;
             border-radius: 60px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             cursor: pointer;
             transition: 0.2s;
             font-family: inherit;
-            box-shadow: 0 5px 14px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.3);
         }
 
         button:hover {
             transform: scale(1.02);
-            background: linear-gradient(135deg, #ffa5c2, #ff6e92);
-            box-shadow: 0 0 16px #ff88ae;
+            background: linear-gradient(125deg, #ffa5c2, #ff6e92);
+            box-shadow: 0 0 15px #ff88b0;
         }
 
-        .instruction {
-            font-size: 0.9rem;
-            background: rgba(20, 10, 30, 0.7);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .message-area {
+        .romantic-message {
             position: fixed;
-            bottom: 24px;
+            top: 20px;
             left: 0;
             right: 0;
             text-align: center;
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #ffe2f0;
-            text-shadow: 0 0 12px #ff4788;
-            background: rgba(0,0,0,0.35);
+            font-size: 1.2rem;
+            font-family: 'Pacifico', cursive;
+            color: #ffe5f0;
+            text-shadow: 0 0 12px #ff4477;
+            background: rgba(0,0,0,0.3);
             backdrop-filter: blur(8px);
             width: fit-content;
             margin: 0 auto;
-            padding: 8px 24px;
+            padding: 6px 20px;
             border-radius: 60px;
             pointer-events: none;
             z-index: 99;
-            font-family: 'Pacifico', cursive;
-            letter-spacing: 0.5px;
+            white-space: nowrap;
+            letter-spacing: 1px;
         }
 
-        @keyframes floatGlow {
-            0% { text-shadow: 0 0 2px #ffb7c5; }
-            100% { text-shadow: 0 0 18px #ff5c8a; }
+        @keyframes gentleFloat {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-3px); }
         }
     </style>
 </head>
 <body>
 
-<div class="ui-panel">
-    <div class="glass-card love-title">
-        💖 my everything baby 💖 <span>sweety, darling, cutie pattotiee , jannah</span> 💖
-    </div>
-    <div class="glass-card instruction">
-        ✨ draw any shape (circle, heart, squiggle) → close the loop → watch it become real! ✨
-    </div>
-    <button id="resetBtn">🌸 clear canvas & bloom again 🌸</button>
+<div class="romantic-message" id="liveMsg">
+    💕 draw anything, my sweety darling cutie jannah — it becomes real 💕
 </div>
-<div class="message-area" id="affectionMessage">
-    💋 draw something beautiful for me, my love 💋
+
+<div class="love-dashboard">
+    <div class="glass-chip greeting">
+        ✨ for <span>my everything baby</span> ✨
+    </div>
+    <button id="resetMagicBtn">🌸 kiss & refresh canvas 🌸</button>
 </div>
 
 <canvas id="magicCanvas"></canvas>
 
 <script>
-    (function() {
-        // ---------- canvas setup ----------
+    (function(){
+        // ---- unique shape-to-life engine ----
         const canvas = document.getElementById('magicCanvas');
         let ctx = canvas.getContext('2d');
         let width, height;
 
-        // ---------- drawing state ----------
-        let drawingPoints = [];      // points of current stroke
+        // drawing state
+        let currentStroke = [];       // points being drawn
         let isDrawing = false;
         let previewPoints = [];
 
-        // ---------- magical creatures (from shapes) ----------
-        let magicalCreatures = [];    // hearts, kisses, stars that came to life
-        let particles = [];           // sparkles, confetti, heart bursts
+        // ---- living shapes: exact copies of drawn paths that float and animate ----
+        let livingShapes = [];        // each stores { points, bounds, velocity, rotation, life, color, glow }
+        let particles = [];            // sparkles, hearts, kisses
         let floatingTexts = [];
         let ambientSparkles = [];
 
-        // romance phrases
-        const lovePhrases = [
-            "💗 you're my everything 💗", "😘 kiss you, my darling 😘", "❤️ sweety, i adore you ❤️",
-            "🤍 jannah, my heart beats for you 🤍", "💖 cutie, you make magic real 💖", "💋 love you forever 💋",
-            "✨ my baby, you're pure magic ✨", "🌹 every shape becomes love 🌹"
+        // romantic phrase bank (for floating texts)
+        const sweetWords = [
+            "💖 my everything 💖", "😘 sweety, i love you 😘", "❤️ darling, you're magic ❤️",
+            "🤍 cutie jannah 🤍", "💋 kiss for you 💋", "✨ my baby, beautiful shape ✨",
+            "🌸 you made this real 🌸", "💗 sweetheart, perfect 💗"
         ];
 
-        // ---------- helper: get random phrase ----------
-        function randomLovePhrase() {
-            return lovePhrases[Math.floor(Math.random() * lovePhrases.length)];
+        function randomSweetText() {
+            return sweetWords[Math.floor(Math.random() * sweetWords.length)];
         }
 
-        // update affection message occasionally
-        function setRandomAffectionMessage() {
-            const msgDiv = document.getElementById('affectionMessage');
+        // update top message occasionally
+        function setRandomRomanceMessage() {
+            const msgDiv = document.getElementById('liveMsg');
             if(msgDiv) {
-                msgDiv.style.opacity = '0.9';
-                msgDiv.innerHTML = `💕 ${randomLovePhrase()} 💕`;
+                const msgs = [
+                    "💕 draw a star, a heart, a cloud — it becomes alive! 💕",
+                    "🌸 my darling, every line you draw turns into real magic 🌸",
+                    "❤️ your shapes float with love, sweety ❤️",
+                    "💋 kiss your drawing? it will dance for you 💋",
+                    "🤍 jannah, my everything, watch your art come to life 🤍"
+                ];
+                msgDiv.innerHTML = msgs[Math.floor(Math.random() * msgs.length)];
                 setTimeout(() => {
-                    if(msgDiv) msgDiv.style.opacity = '1';
-                }, 100);
+                    if(msgDiv && !isDrawing) msgDiv.innerHTML = "✨ draw anything, my love — close the loop to bring it to life ✨";
+                }, 2800);
             }
         }
 
-        // ---------- particle & effect systems (very rich) ----------
-        function addCelebrationBurst(x, y, type = 'love') {
-            const count = 28 + Math.floor(Math.random() * 20);
-            for(let i=0;i<count;i++) {
-                const angle = Math.random() * Math.PI * 2;
-                const speed = 1.5 + Math.random() * 3.5;
-                const vx = Math.cos(angle) * speed;
-                const vy = Math.sin(angle) * speed;
-                let color;
-                if(type === 'whiteHeart') color = `hsl(0, 0%, 95%)`;
-                else if(type === 'redHeart') color = `hsl(345, 95%, 68%)`;
-                else color = `hsl(${320 + Math.random() * 50}, 95%, 70%)`;
-                particles.push({
-                    x: x, y: y, vx: vx, vy: vy, life: 1.0,
-                    size: 3 + Math.random() * 8, color: color, isEmoji: false
-                });
-            }
-            // add flying kiss & heart emojis
-            for(let i=0;i<14;i++) {
-                const angle = Math.random() * Math.PI * 2;
-                const speed = 1.2 + Math.random() * 2.5;
-                const vx = Math.cos(angle) * speed;
-                const vy = Math.sin(angle) * speed;
-                const emoji = Math.random() > 0.5 ? '❤️' : (Math.random() > 0.6 ? '😘' : '💋');
-                particles.push({
-                    x: x, y: y, vx: vx, vy: vy, life: 1.0,
-                    size: 16 + Math.random() * 10, isEmoji: true, emoji: emoji
-                });
-            }
-        }
-
-        function addConfettiKissRain(x, y) {
-            for(let i=0;i<45;i++) {
-                const angle = Math.random() * Math.PI * 2;
-                const speed = 1 + Math.random() * 3;
-                const vx = Math.cos(angle) * speed;
-                const vy = Math.sin(angle) * speed - 1.2;
-                const kissOrHeart = Math.random() > 0.4 ? '😘' : (Math.random() > 0.5 ? '💋' : '❤️');
-                particles.push({
-                    x: x + (Math.random()-0.5)*70,
-                    y: y + (Math.random()-0.5)*60,
-                    vx: vx, vy: vy, life: 1.3,
-                    size: 12 + Math.random() * 12, isEmoji: true, emoji: kissOrHeart
-                });
-            }
-            // extra white/red heart sparkles
-            for(let i=0;i<30;i++) {
-                particles.push({
-                    x: x + (Math.random()-0.5)*90,
-                    y: y + (Math.random()-0.5)*80,
-                    vx: (Math.random()-0.5)*2.5,
-                    vy: (Math.random()-2)*1.8,
-                    life: 1.1,
-                    size: 4 + Math.random() * 7,
-                    color: `hsl(${Math.random() > 0.6 ? 345 : 0}, 100%, 75%)`,
-                    isEmoji: false
-                });
-            }
-        }
-
-        function addFloatingLoveText(x, y, text) {
-            floatingTexts.push({
-                x: x, y: y-15, text: text, life: 1.2, vy: -1.4, vx: (Math.random()-0.5)*0.6
-            });
-        }
-
-        // ----- magical creature that appears after shape completion
-        class LovingCreature {
-            constructor(x, y, type) {
-                this.x = x;
-                this.y = y;
-                this.type = type; // 'whiteHeart', 'redHeart', 'kissEmoji', 'starLove'
-                this.size = 36;
-                this.vx = (Math.random() - 0.5) * 1.2;
-                this.vy = (Math.random() - 0.8) * 0.9 - 0.5;
-                this.life = 1.0;     // for fade-out after some time? but they stay alive & float
-                this.floatAngle = Math.random() * Math.PI * 2;
-                this.wobble = 0;
-                this.glowIntensity = 0.8;
-                this.createdAt = Date.now();
-            }
-
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-                // gentle bounce on edges but keep them visible
-                const margin = 30;
-                if(this.x - margin < 0) { this.x = margin; this.vx = -this.vx * 0.96; }
-                if(this.x + margin > width) { this.x = width - margin; this.vx = -this.vx * 0.96; }
-                if(this.y - margin < 0) { this.y = margin; this.vy = -this.vy * 0.96; }
-                if(this.y + margin > height) { this.y = height - margin; this.vy = -this.vy * 0.96; }
-                this.wobble += 0.03;
-                this.glowIntensity = 0.7 + Math.sin(Date.now() * 0.005 + this.x) * 0.3;
-            }
-
-            draw(ctx) {
-                ctx.save();
-                ctx.shadowBlur = 18 + 5 * this.glowIntensity;
-                ctx.shadowColor = this.type === 'whiteHeart' ? '#fff0f5' : (this.type === 'redHeart' ? '#ff6b8b' : '#ff99cc');
-                ctx.translate(this.x, this.y);
-                const scale = 1 + Math.sin(this.wobble) * 0.08;
-                ctx.scale(scale, scale);
-                
-                if(this.type === 'whiteHeart') {
-                    this.drawHeart(ctx, '#ffffff', '#ffe0f0');
-                } else if(this.type === 'redHeart') {
-                    this.drawHeart(ctx, '#ff3366', '#ff8aaa');
-                } else if(this.type === 'kissEmoji') {
-                    ctx.font = `${Math.floor(this.size * 1.3)}px "Segoe UI Emoji", "Apple Color Emoji"`;
-                    ctx.textAlign = "center";
-                    ctx.textBaseline = "middle";
-                    ctx.fillStyle = '#ffb6d9';
-                    ctx.fillText('😘', 0, 0);
-                    ctx.font = `${Math.floor(this.size * 0.8)}px "Segoe UI Emoji"`;
-                    ctx.fillStyle = '#ffffffcc';
-                    ctx.fillText('❤️', -12, -12);
-                    ctx.fillText('🤍', 12, -10);
-                } else if(this.type === 'starLove') {
-                    this.drawLoveStar(ctx);
-                }
-                ctx.restore();
-            }
-
-            drawHeart(ctx, mainColor, lightColor) {
-                const r = this.size/1.6;
-                ctx.beginPath();
-                for (let t = 0; t <= Math.PI * 2; t += 0.1) {
-                    let xScaled = 16 * Math.pow(Math.sin(t), 3);
-                    let yScaled = 13 * Math.cos(t) - 5 * Math.cos(2*t) - 2*Math.cos(3*t) - Math.cos(4*t);
-                    let px = xScaled * (r/28);
-                    let py = -yScaled * (r/28);
-                    if(t === 0) ctx.moveTo(px, py);
-                    else ctx.lineTo(px, py);
-                }
-                const grad = ctx.createLinearGradient(-r/2, -r/3, r/2, r/2);
-                grad.addColorStop(0, lightColor);
-                grad.addColorStop(1, mainColor);
-                ctx.fillStyle = grad;
-                ctx.fill();
-                ctx.fillStyle = 'rgba(255,255,240,0.6)';
-                ctx.beginPath();
-                ctx.arc(-r*0.18, -r*0.2, r*0.12, 0, Math.PI*2);
-                ctx.fill();
-            }
-
-            drawLoveStar(ctx) {
-                const outerR = this.size/1.5;
-                const innerR = this.size/2.2;
-                let rot = Math.PI/2*3;
-                const step = Math.PI/5;
-                ctx.beginPath();
-                for(let i=0;i<5;i++) {
-                    let x1 = Math.cos(rot) * outerR;
-                    let y1 = Math.sin(rot) * outerR;
-                    ctx.lineTo(x1, y1);
-                    rot += step;
-                    let x2 = Math.cos(rot) * innerR;
-                    let y2 = Math.sin(rot) * innerR;
-                    ctx.lineTo(x2, y2);
-                    rot += step;
-                }
-                ctx.closePath();
-                ctx.fillStyle = '#ffdb8e';
-                ctx.fill();
-                ctx.fillStyle = '#ff9f4a';
-                ctx.font = `${Math.floor(this.size*0.7)}px "Segoe UI Emoji"`;
-                ctx.fillText('❤️', -7, -5);
-            }
-        }
-
-        // ---- ambient magical background ----
+        // ---- ambient fairy dust ----
         function initAmbient() {
             ambientSparkles = [];
-            for(let i=0;i<180;i++) {
+            for(let i=0;i<160;i++) {
                 ambientSparkles.push({
                     x: Math.random() * width,
                     y: Math.random() * height,
-                    radius: 1 + Math.random() * 3,
+                    radius: 1 + Math.random() * 3.5,
                     alpha: 0.2 + Math.random() * 0.5,
-                    vx: (Math.random() - 0.5) * 0.25,
-                    vy: (Math.random() - 0.5) * 0.2,
-                    color: `hsla(${330 + Math.random() * 40}, 90%, 70%, 0.5)`
+                    vx: (Math.random() - 0.5) * 0.2,
+                    vy: (Math.random() - 0.5) * 0.15,
+                    color: `hsla(${320 + Math.random() * 50}, 90%, 75%, 0.5)`
                 });
             }
         }
@@ -384,103 +210,235 @@
             }
         }
 
-        // ---- shape detection: closed loop (distance between start and end < 50px)
-        function isShapeClosed(points, threshold = 55) {
-            if(points.length < 8) return false;
-            const first = points[0];
-            const last = points[points.length-1];
-            const dist = Math.hypot(first.x - last.x, first.y - last.y);
-            return dist < threshold;
+        // ---- particle effects (rich, pretty, kisses & hearts) ----
+        function addRichBurst(x, y, shapeColor = '#ffb3d9') {
+            // sparkles
+            for(let i=0;i<32;i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const speed = 1.2 + Math.random() * 3;
+                const vx = Math.cos(angle) * speed;
+                const vy = Math.sin(angle) * speed;
+                particles.push({
+                    x: x, y: y, vx: vx, vy: vy, life: 0.95,
+                    size: 2 + Math.random() * 6,
+                    color: `hsl(${Math.random() * 60 + 310}, 95%, 70%)`,
+                    isEmoji: false
+                });
+            }
+            // floating kisses and hearts emoji
+            for(let i=0;i<18;i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const speed = 0.8 + Math.random() * 2.5;
+                const vx = Math.cos(angle) * speed;
+                const vy = Math.sin(angle) * speed - 0.8;
+                const emoji = Math.random() > 0.5 ? '❤️' : (Math.random() > 0.6 ? '😘' : '💋');
+                particles.push({
+                    x: x + (Math.random()-0.5)*35,
+                    y: y + (Math.random()-0.5)*35,
+                    vx: vx, vy: vy, life: 1.0,
+                    size: 12 + Math.random() * 10,
+                    isEmoji: true,
+                    emoji: emoji
+                });
+            }
+            // white & red heart confetti
+            for(let i=0;i<24;i++) {
+                particles.push({
+                    x: x + (Math.random()-0.5)*55,
+                    y: y + (Math.random()-0.5)*50,
+                    vx: (Math.random()-0.5)*2.2,
+                    vy: (Math.random()-2)*1.8,
+                    life: 1.1,
+                    size: 4 + Math.random() * 8,
+                    color: `hsl(${Math.random() > 0.6 ? 345 : 0}, 98%, 72%)`,
+                    isEmoji: false
+                });
+            }
         }
 
-        // transform drawing into magical creature
-        function transformShapeToCreature(points) {
-            if(!isShapeClosed(points)) return false;
-            // calculate centroid of shape
-            let sumX = 0, sumY = 0;
-            for(let p of points) {
-                sumX += p.x;
-                sumY += p.y;
+        function addCelebrationConfetti(x,y) {
+            for(let i=0;i<40;i++) {
+                const kissHeart = Math.random() > 0.5 ? '💋' : '❤️';
+                particles.push({
+                    x: x + (Math.random()-0.5)*80,
+                    y: y + (Math.random()-0.5)*70,
+                    vx: (Math.random()-0.5)*2.5,
+                    vy: (Math.random()-2)*2,
+                    life: 1.2,
+                    size: 14 + Math.random() * 12,
+                    isEmoji: true,
+                    emoji: kissHeart
+                });
             }
-            const centerX = sumX / points.length;
-            const centerY = sumY / points.length;
-            // choose random creature type (white/red hearts, kiss, lovestar)
-            const types = ['whiteHeart', 'redHeart', 'kissEmoji', 'starLove'];
-            const chosenType = types[Math.floor(Math.random() * types.length)];
-            // create loving creature
-            const newCreature = new LovingCreature(centerX, centerY, chosenType);
-            magicalCreatures.push(newCreature);
+        }
+
+        function addFloatingLoveText(x,y, text) {
+            floatingTexts.push({
+                x: x, y: y-15, text: text, life: 1.1, vy: -1.3, vx: (Math.random()-0.5)*0.6
+            });
+        }
+
+        // ---- living shape class (exact drawn shape that becomes real) ----
+        class LivingShape {
+            constructor(points, colorHue) {
+                this.originalPoints = points.slice(); // copy
+                // compute centroid
+                let sumX = 0, sumY = 0;
+                for(let p of points) { sumX += p.x; sumY += p.y; }
+                this.cx = sumX / points.length;
+                this.cy = sumY / points.length;
+                // translate points to local coords (relative to center)
+                this.localPoints = points.map(p => ({ x: p.x - this.cx, y: p.y - this.cy }));
+                this.x = this.cx;
+                this.y = this.cy;
+                this.vx = (Math.random() - 0.5) * 1.2;
+                this.vy = (Math.random() - 0.8) * 1.0 - 0.4;
+                this.rotation = 0;
+                this.rotSpeed = (Math.random() - 0.5) * 0.02;
+                this.scale = 1;
+                this.scaleSpeed = 0.002;
+                this.life = 1.0;   // not fading but alive forever, we keep them
+                this.color = `hsl(${colorHue}, 85%, 70%)`;
+                this.glow = 0.7;
+                this.wobble = 0;
+                this.created = Date.now();
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                // romantic bounce with soft edges
+                const margin = 40;
+                if(this.x - margin < 0) { this.x = margin; this.vx = -this.vx * 0.96; }
+                if(this.x + margin > width) { this.x = width - margin; this.vx = -this.vx * 0.96; }
+                if(this.y - margin < 0) { this.y = margin; this.vy = -this.vy * 0.96; }
+                if(this.y + margin > height) { this.y = height - margin; this.vy = -this.vy * 0.96; }
+                this.rotation += this.rotSpeed;
+                this.scale += this.scaleSpeed;
+                if(this.scale > 1.08) this.scaleSpeed = -0.002;
+                if(this.scale < 0.92) this.scaleSpeed = 0.002;
+                this.wobble += 0.03;
+                this.glow = 0.6 + Math.sin(Date.now() * 0.005 + this.x) * 0.3;
+            }
+
+            draw(ctx) {
+                ctx.save();
+                ctx.shadowBlur = 16 + 5 * this.glow;
+                ctx.shadowColor = `hsl(${this.color.match(/\d+/)?.[0] || 330}, 90%, 70%)`;
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+                ctx.scale(this.scale, this.scale);
+                ctx.beginPath();
+                // draw the exact shape using local points
+                if(this.localPoints.length < 2) return;
+                ctx.moveTo(this.localPoints[0].x, this.localPoints[0].y);
+                for(let i=1;i<this.localPoints.length;i++) {
+                    ctx.lineTo(this.localPoints[i].x, this.localPoints[i].y);
+                }
+                ctx.closePath();
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.strokeStyle = `rgba(255, 240, 200, 0.8)`;
+                ctx.lineWidth = 2.5;
+                ctx.stroke();
+                // add little heart inside shape randomly (romantic)
+                ctx.font = `20px "Segoe UI Emoji"`;
+                ctx.fillStyle = `rgba(255,255,210,0.8)`;
+                ctx.fillText('❤️', -12, -8);
+                ctx.fillText('🤍', 8, 6);
+                ctx.restore();
+            }
+        }
+
+        // ---- detect closed shape (distance between start and end) ----
+        function isClosedShape(points, threshold = 55) {
+            if(points.length < 12) return false;
+            const first = points[0];
+            const last = points[points.length-1];
+            return Math.hypot(first.x - last.x, first.y - last.y) < threshold;
+        }
+
+        // ---- turn the drawn stroke into a living shape! ----
+        function materializeShape(points) {
+            if(!isClosedShape(points)) {
+                // gently notify to close loop
+                if(points.length > 8) {
+                    addFloatingLoveText(points[points.length-1].x, points[points.length-1].y-20, "💕 close the loop, my love 💕");
+                    for(let i=0;i<12;i++) {
+                        particles.push({
+                            x: points[points.length-1].x + (Math.random()-0.5)*30,
+                            y: points[points.length-1].y + (Math.random()-0.5)*30,
+                            vx: (Math.random()-0.5)*1.2,
+                            vy: (Math.random()-1)*1.2,
+                            life: 0.6,
+                            size: 3,
+                            color: '#ffb3d9',
+                            isEmoji: false
+                        });
+                    }
+                }
+                return false;
+            }
             
-            // MASSIVE animation: confetti, kisses, hearts burst at shape location
-            addCelebrationBurst(centerX, centerY, chosenType);
-            addConfettiKissRain(centerX, centerY);
-            // floating love text
-            const sweetText = randomLovePhrase();
-            addFloatingLoveText(centerX, centerY-20, sweetText);
+            // compute a unique color based on shape position (for variety)
+            const sumX = points.reduce((s,p)=>s+p.x,0)/points.length;
+            const sumY = points.reduce((s,p)=>s+p.y,0)/points.length;
+            const hue = ( (sumX * 0.3 + sumY * 0.5) % 360 + 310 ) % 360;
+            const newLiving = new LivingShape(points, hue);
+            livingShapes.push(newLiving);
             
-            // also draw some extra floating hearts from the whole shape outline
+            // massive celebration effects at shape centroid
+            const centerX = sumX;
+            const centerY = sumY;
+            addRichBurst(centerX, centerY, `hsl(${hue},85%,70%)`);
+            addCelebrationConfetti(centerX, centerY);
+            const sweetMsg = randomSweetText();
+            addFloatingLoveText(centerX, centerY-20, sweetMsg);
+            
+            // also add sparkles along the outline
             for(let p of points) {
-                if(Math.random() > 0.7) {
+                if(Math.random()>0.8) {
                     for(let i=0;i<2;i++) {
                         particles.push({
                             x: p.x + (Math.random()-0.5)*8,
                             y: p.y + (Math.random()-0.5)*8,
-                            vx: (Math.random()-0.5)*1.5,
-                            vy: (Math.random()-1)*1.2,
-                            life: 0.8,
-                            size: 3+Math.random()*5,
-                            color: `hsl(${Math.random() > 0.7 ? 345 : 0}, 95%, 70%)`,
+                            vx: (Math.random()-0.5)*1.2,
+                            vy: (Math.random()-1)*1.1,
+                            life: 0.7,
+                            size: 2+Math.random()*5,
+                            color: `hsl(${hue}, 95%, 70%)`,
                             isEmoji: false
                         });
                     }
                 }
             }
-            // special message display
-            const msgDiv = document.getElementById('affectionMessage');
+            // update top message for joy
+            const msgDiv = document.getElementById('liveMsg');
             if(msgDiv) {
-                msgDiv.innerHTML = `✨💖 your shape became ${chosenType === 'whiteHeart' ? 'a pure white heart' : (chosenType === 'redHeart' ? 'a passionate red heart' : (chosenType === 'kissEmoji' ? 'a sweet kiss' : 'a sparkling love star'))}! 💖✨`;
+                msgDiv.innerHTML = `💖 your shape is REAL! it floats with love, ${sweetMsg} 💖`;
                 setTimeout(() => {
-                    if(msgDiv && !isDrawing) msgDiv.innerHTML = `💋 draw another shape for me, my darling 💋`;
-                }, 2000);
+                    if(msgDiv && !isDrawing) msgDiv.innerHTML = "✨ draw another shape, my everything baby — close the loop ✨";
+                }, 2800);
             }
             return true;
         }
 
-        // finalize drawing when mouse/touch ends
-        function finalizeDrawing() {
+        // finalize drawing on mouse/touch up
+        function finalizeStroke() {
             if(!isDrawing) return;
-            if(drawingPoints.length > 6) {
-                const success = transformShapeToCreature(drawingPoints);
-                if(!success) {
-                    // not closed, show gentle hint with effect
-                    if(drawingPoints.length > 10) {
-                        addFloatingLoveText(drawingPoints[drawingPoints.length-1].x, drawingPoints[drawingPoints.length-1].y, "💕 close the loop, my love 💕");
-                        for(let i=0;i<10;i++) {
-                            particles.push({
-                                x: drawingPoints[drawingPoints.length-1].x + (Math.random()-0.5)*30,
-                                y: drawingPoints[drawingPoints.length-1].y + (Math.random()-0.5)*30,
-                                vx: (Math.random()-0.5)*1,
-                                vy: (Math.random()-1)*1,
-                                life: 0.5,
-                                size: 3,
-                                color: '#ffaacc',
-                                isEmoji: false
-                            });
-                        }
-                    }
-                }
+            if(currentStroke.length > 6) {
+                materializeShape(currentStroke);
             }
-            // clear drawing preview
-            drawingPoints = [];
+            currentStroke = [];
             previewPoints = [];
             isDrawing = false;
         }
 
-        // ----- drawing handlers -----
+        // drawing event handlers
         function startDraw(e) {
             e.preventDefault();
             const pos = getCanvasCoords(e);
-            drawingPoints = [pos];
+            currentStroke = [pos];
             previewPoints = [pos];
             isDrawing = true;
         }
@@ -489,15 +447,15 @@
             if(!isDrawing) return;
             e.preventDefault();
             const pos = getCanvasCoords(e);
-            drawingPoints.push(pos);
+            currentStroke.push(pos);
             previewPoints.push(pos);
-            if(previewPoints.length > 80) previewPoints.shift();
+            if(previewPoints.length > 90) previewPoints.shift();
         }
 
         function endDraw(e) {
             if(!isDrawing) return;
             e.preventDefault();
-            finalizeDrawing();
+            finalizeStroke();
         }
 
         function getCanvasCoords(e) {
@@ -519,10 +477,9 @@
             return { x: canvasX, y: canvasY };
         }
 
-        // ----- update creatures and particles -----
+        // update all particles & living shapes
         function updateWorld() {
-            for(let c of magicalCreatures) c.update();
-            // update particles
+            for(let shape of livingShapes) shape.update();
             for(let i=0;i<particles.length;i++) {
                 let p = particles[i];
                 p.x += p.vx;
@@ -542,7 +499,7 @@
             }
         }
 
-        // ----- drawing preview on canvas -----
+        // ---- drawing preview with romantic glow ----
         function drawPreview() {
             if(previewPoints.length < 2) return;
             ctx.beginPath();
@@ -550,33 +507,33 @@
             for(let i=1;i<previewPoints.length;i++) {
                 ctx.lineTo(previewPoints[i].x, previewPoints[i].y);
             }
-            ctx.strokeStyle = '#ffb7d5';
-            ctx.lineWidth = 5;
-            ctx.shadowBlur = 10;
-            ctx.shadowColor = '#ff66aa';
+            ctx.strokeStyle = '#ffd9e6';
+            ctx.lineWidth = 4;
+            ctx.shadowBlur = 12;
+            ctx.shadowColor = '#ff77aa';
             ctx.stroke();
-            // glowing dots
             for(let p of previewPoints) {
                 ctx.beginPath();
                 ctx.arc(p.x, p.y, 3, 0, Math.PI*2);
-                ctx.fillStyle = '#ffe0f0';
+                ctx.fillStyle = '#fff0f5';
                 ctx.fill();
             }
             ctx.shadowBlur = 0;
         }
 
-        // ----- draw background with love effects -----
+        // ---- beautiful background with floating hearts ----
         function drawBackground() {
-            const grad = ctx.createLinearGradient(0, 0, width, height);
-            grad.addColorStop(0, '#1f142c');
-            grad.addColorStop(1, '#2d1a3a');
+            const grad = ctx.createLinearGradient(0, 0, width*0.7, height);
+            grad.addColorStop(0, '#1f142f');
+            grad.addColorStop(1, '#2b1a3a');
             ctx.fillStyle = grad;
             ctx.fillRect(0, 0, width, height);
-            // floating soft hearts in bg
-            for(let i=0;i<70;i++) {
-                ctx.font = `16px "Segoe UI Emoji"`;
-                ctx.fillStyle = `rgba(255, 200, 220, 0.12)`;
-                ctx.fillText(Math.random() > 0.6 ? '❤️' : '🤍', (i*97)%width, (i*211)%height);
+            // tiny shimmering stars
+            for(let i=0;i<100;i++) {
+                ctx.fillStyle = `rgba(255,220,200,${0.1+Math.sin(Date.now()*0.002+i)*0.05})`;
+                ctx.beginPath();
+                ctx.arc((i*131)%width, (i*257)%height, 1.2, 0, Math.PI*2);
+                ctx.fill();
             }
             for(let s of ambientSparkles) {
                 ctx.globalAlpha = s.alpha;
@@ -586,30 +543,36 @@
                 ctx.fill();
             }
             ctx.globalAlpha = 1;
+            // floating white/red heart silhouettes
+            for(let i=0;i<60;i++) {
+                ctx.font = `22px "Segoe UI Emoji"`;
+                ctx.fillStyle = `rgba(255, 180, 200, 0.12)`;
+                ctx.fillText(Math.random() > 0.6 ? '❤️' : '🤍', (i*93)%width, (i*173)%height);
+            }
         }
 
-        function drawCreatures() {
-            for(let c of magicalCreatures) c.draw(ctx);
+        function drawLivingShapes() {
+            for(let shape of livingShapes) shape.draw(ctx);
         }
 
         function drawParticlesAndTexts() {
             for(let p of particles) {
                 if(p.isEmoji) {
-                    ctx.font = `${Math.floor(p.size * (0.6 + p.life*0.4))}px "Segoe UI Emoji", "Apple Color Emoji"`;
+                    ctx.font = `${Math.floor(p.size * (0.5 + p.life*0.5))}px "Segoe UI Emoji", "Apple Color Emoji"`;
                     ctx.globalAlpha = p.life;
-                    ctx.fillStyle = `rgba(255,220,200,${p.life})`;
+                    ctx.fillStyle = `rgba(255,230,200,${p.life})`;
                     ctx.fillText(p.emoji, p.x, p.y);
                 } else {
                     ctx.globalAlpha = p.life;
                     ctx.fillStyle = p.color;
                     ctx.beginPath();
-                    ctx.arc(p.x, p.y, p.size * (0.5 + p.life*0.3), 0, Math.PI*2);
+                    ctx.arc(p.x, p.y, p.size * (0.6 + p.life*0.3), 0, Math.PI*2);
                     ctx.fill();
                 }
             }
             for(let t of floatingTexts) {
                 ctx.font = `bold ${22 * (0.6 + t.life)}px "Segoe UI", "Pacifico", cursive`;
-                ctx.fillStyle = `rgba(255, 235, 210, ${t.life})`;
+                ctx.fillStyle = `rgba(255, 235, 215, ${t.life})`;
                 ctx.shadowBlur = 14;
                 ctx.fillText(t.text, t.x-15, t.y);
             }
@@ -617,25 +580,25 @@
             ctx.shadowBlur = 0;
         }
 
-        // ----- reset entire canvas & creatures -----
-        function resetGame() {
-            magicalCreatures = [];
+        // reset everything (clear all shapes)
+        function resetMagic() {
+            livingShapes = [];
             particles = [];
             floatingTexts = [];
-            drawingPoints = [];
+            currentStroke = [];
             previewPoints = [];
             isDrawing = false;
-            addCelebrationBurst(width/2, height/2, 'redHeart');
-            addConfettiKissRain(width/2, height/2);
-            addFloatingLoveText(width/2, height/2-40, "🌸 fresh canvas, endless love 🌸");
-            const msgDiv = document.getElementById('affectionMessage');
-            if(msgDiv) msgDiv.innerHTML = "✨ draw something new, my everything baby ✨";
+            addRichBurst(width/2, height/2, '#ff99cc');
+            addCelebrationConfetti(width/2, height/2);
+            addFloatingLoveText(width/2, height/2-40, "🌸 fresh canvas, my everything baby 🌸");
+            const msgDiv = document.getElementById('liveMsg');
+            if(msgDiv) msgDiv.innerHTML = "✨ draw new shapes, my sweety darling jannah ✨";
             setTimeout(() => {
-                if(msgDiv && !isDrawing) msgDiv.innerHTML = "💖 i love every shape you make 💖";
-            }, 2500);
+                if(msgDiv && !isDrawing) msgDiv.innerHTML = "💕 every shape you draw becomes real — close the loop 💕";
+            }, 2800);
         }
 
-        // ----- resize canvas -----
+        // resize canvas & reinit ambient
         function resizeCanvas() {
             width = window.innerWidth;
             height = window.innerHeight;
@@ -644,7 +607,7 @@
             initAmbient();
         }
 
-        // ----- events & animation loop -----
+        // attach events and animation
         function attachEvents() {
             canvas.addEventListener('mousedown', startDraw);
             window.addEventListener('mousemove', drawMove);
@@ -653,10 +616,10 @@
             canvas.addEventListener('touchmove', drawMove, {passive: false});
             canvas.addEventListener('touchend', endDraw);
             canvas.addEventListener('touchcancel', endDraw);
-            document.getElementById('resetBtn').addEventListener('click', () => resetGame());
+            document.getElementById('resetMagicBtn').addEventListener('click', () => resetMagic());
             window.addEventListener('resize', () => {
                 resizeCanvas();
-                resetGame();
+                resetMagic();
             });
         }
 
@@ -665,7 +628,7 @@
             updateWorld();
             updateAmbient();
             drawBackground();
-            drawCreatures();
+            drawLivingShapes();
             drawPreview();
             drawParticlesAndTexts();
             requestAnimationFrame(animate);
@@ -675,13 +638,10 @@
         initAmbient();
         attachEvents();
         animate();
-        // initial greeting
-        setTimeout(() => {
-            setRandomAffectionMessage();
-        }, 500);
+        setRandomRomanceMessage();
         setInterval(() => {
-            if(!isDrawing && Math.random() < 0.15) setRandomAffectionMessage();
-        }, 8000);
+            if(!isDrawing && Math.random() < 0.12) setRandomRomanceMessage();
+        }, 7000);
     })();
 </script>
 </body>
